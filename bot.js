@@ -1,24 +1,18 @@
-const { Client, GatewayIntentBits, Partials, Collection, REST, Routes } = require("discord.js");
-const fs = require("fs");
-const path = require("path");
+const { Client, GatewayIntentBits, Collection } = require('discord.js');
+const fs = require('fs');
+const path = require('path');
 
 const client = new Client({
   intents: [
-    GatewayIntentBits.Guilds,
-    GatewayIntentBits.GuildMessages,
-    GatewayIntentBits.GuildPresences,
-    GatewayIntentBits.GuildMessageReactions,
-    GatewayIntentBits.DirectMessages,
-    GatewayIntentBits.MessageContent
-  ],
-  partials: [Partials.Channel, Partials.Message, Partials.User, Partials.GuildMember, Partials.Reaction]
+    GatewayIntentBits.Guilds
+  ]
 });
 
 client.commands = new Collection();
 const commands = [];
 
-const komutlarPath = path.join(__dirname, "komutlar");
-const komutFiles = fs.readdirSync(komutlarPath).filter(f => f.endsWith(".js"));
+const komutlarPath = path.join(__dirname, 'komutlar');
+const komutFiles = fs.readdirSync(komutlarPath).filter(f => f.endsWith('.js'));
 
 for (const file of komutFiles) {
   const komut = require(path.join(komutlarPath, file));
@@ -26,8 +20,8 @@ for (const file of komutFiles) {
   commands.push(komut.data.toJSON());
 }
 
-const eventsPath = path.join(__dirname, "events");
-const eventFiles = fs.readdirSync(eventsPath).filter(f => f.endsWith(".js"));
+const eventsPath = path.join(__dirname, 'events');
+const eventFiles = fs.readdirSync(eventsPath).filter(f => f.endsWith('.js'));
 
 for (const file of eventFiles) {
   const event = require(path.join(eventsPath, file));
@@ -38,9 +32,9 @@ for (const file of eventFiles) {
   }
 }
 
-const express = require("express");
+const express = require('express');
 const app = express();
-app.get("/", (req, res) => res.sendStatus(200));
+app.get('/', (req, res) => res.sendStatus(200));
 app.listen(process.env.PORT || 3000);
 
 client.login(process.env.TOKEN);
