@@ -1,19 +1,32 @@
 {
-  "name": "discord-altyapi-bot",
+  "name": "hello-express",
   "version": "1.0.0",
-  "description": "Discord.js v14 Slash Komut Bot Altyapısı",
-  "main": "bot.js",
+  "description": "Rago",
+  "main": "lonely.js",
   "scripts": {
-    "start": "node bot.js"
+    "watch": "nodemon lonely.js",
+    "start": "node lonely.js"
   },
-  "keywords": [],
-  "author": "Emirhan Saraç",
-  "license": "ISC",
   "dependencies": {
-    "discord.js": "^14.15.3",
-    "express": "^4.18.1"
+    "canvacord": "^5.0.7",
+    "dabi-images": "^2.7.5",
+    "dctr-antispam.js": "^0.1.1",
+    "discord-logs": "^1.7.7",
+    "discord.js": "^12.3.1",
+    "fs": "0.0.1-security",
+    "funny-words": "^0.1.2",
+    "mathjs": "^7.5.1",
+    "moment": "^2.29.1",
+    "nsfwjs": "^2.2.0"
   },
   "engines": {
-    "node": "18.x"
+    "node": "12.x"
+  },
+  "license": "MIT",
+  "keywords": [
+    "r4go"
+  ],
+  "devDependencies": {
+    "nodemon": "^2.0.4"
   }
 }
