@@ -1,0 +1,19 @@
+{
+  "name": "discord-altyapi-bot",
+  "version": "1.0.0",
+  "description": "Discord.js v14 Slash Komut Bot Altyapısı",
+  "main": "bot.js",
+  "scripts": {
+    "start": "node bot.js"
+  },
+  "keywords": [],
+  "author": "Emirhan Saraç",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^14.15.3",
+    "express": "^4.18.1"
+  },
+  "engines": {
+    "node": "18.x"
+  }
+}
