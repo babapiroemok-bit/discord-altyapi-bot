@@ -111,7 +111,7 @@ if(datas) return message.channel.send('`'+datas+'`');
 client.on('message', async message => {
 if(message.channel.type !== 'text') return;
 if(message.author.bot) return;
-if(message.content.startWith(client.ayarlar.prefix+'afk')) return;
+if(message.content.startsWith(client.ayarlar.prefix+'afk')) return;
 if(message.mentions.members.first()) {
 let mention = message.mentions.members.first();
 const est = await data.fetch(`kullanıcı.${mention.id}.${message.guild.id}`);
